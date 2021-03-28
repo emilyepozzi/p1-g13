@@ -1,7 +1,9 @@
 var RecordButton = document.querySelector("record-section");
+var modal = document.getElementById("myModal");
 var QuoteSection = document.querySelector("quote-section");
 var recordContainer = document.querySelector("record-container");
 var quoteContainer = document.querySelector("quote-container");
+var span = document.getElementsByClassName("close")[0];
 
 // Record Button click
 var ButtonClickHandler = function(event) {
@@ -17,7 +19,22 @@ var ButtonClickHandler = function(event) {
         getUserQuote(quote);
         quoteContainer.textContent = "";
     }
+
+    QuoteSection.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if(event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
 };
+
+
 
 
 // API fetch for Record Button
