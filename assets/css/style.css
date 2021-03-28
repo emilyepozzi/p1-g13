@@ -1,7 +1,7 @@
 
 
 .jumbotron {
-    background: url(./images/Christian_Genius_Billionaire_Kanye_West.png) no-repeat center center;
+    background: url("../images/Christian_Genius_Billionaire_Kanye_West.png") no-repeat center center;
     background-size: cover;
     height: 700px;
     border: 1px solid;
