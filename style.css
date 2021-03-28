@@ -7,6 +7,10 @@
     border: 1px solid;
 }
 
+.jumbotron.h1 {
+    font-size: 50px;
+}
+
 .card-divider {
     position: relative;
 }
