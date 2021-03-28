@@ -34,13 +34,6 @@ fetch(apiUrlRecord)
             console.log(data);
             displaySong(data, user);
         });
-    } else {
-        alert("Error: " + response.statusText);
-    }
-})
-.catch(function(error) {
-    alert("Unable to reach NapsterAPI");
-});
 };
 
 
@@ -61,14 +54,6 @@ fetch(apiUrlKanye)
             console.log(data);
             displayQuote(data, user);
         });
-// error alert
-    } else {
-        alert("Error: " + response.statusText);
-    }
-})
-.catch(function(error) {
-    alert("Unable to reach KanyeAPI");
-});
 };
 
 // event listener for button containers
