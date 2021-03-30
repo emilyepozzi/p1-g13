@@ -5,7 +5,6 @@ var recordContainer = document.querySelector("record-container");
 var quoteContainer = document.querySelector("quote-container");
 var span = document.getElementsByClassName("close")[0];
 
-// Record Button click
 var ButtonClickHandler = function(event) {
     var record = event.target.getSong("record-section");
     if(record) {
@@ -20,17 +19,22 @@ var ButtonClickHandler = function(event) {
         quoteContainer.textContent = "";
     }
 
+    //modal popup for quote
     QuoteSection.onclick = function() {
         modal.style.display = "block";
     }
     span.onclick = function() {
-        modal.style.display = "none";
+        modal.style.display = "block";
     }
     window.onclick = function(event) {
         if(event.target == modal) {
-            modal.style.display = "none";
+            modal.style.display = "block";
         }
     }
+
+    // event listener for button containers
+RecordButton.addEventListener("click", ButtonClickHandler);
+QuoteSection.addEventListener("click", ButtonClickHandler);
 
 };
 
@@ -73,6 +77,3 @@ fetch(apiUrlKanye)
         });
 };
 
-// event listener for button containers
-RecordButton.addEventListener("click", ButtonClickHandler);
-QuoteSection.addEventListener("click", ButtonClickHandler);
