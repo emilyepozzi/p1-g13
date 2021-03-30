@@ -15,7 +15,7 @@
 }
 
 body {
-    background-image: linear-gradient(#2D2D2D, #121212);
+    background-image: linear-gradient(red, yellow);
     font-family: 'MuseoModerno', cursive;
 }
 
