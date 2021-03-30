@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .jumbotron {
     background: url(./images/Christian_Genius_Billionaire_Kanye_West.png) no-repeat center center;
@@ -15,13 +20,18 @@
 }
 
 body {
-    background-image: linear-gradient(red, yellow);
+    background: linear-gradient(#2d2d2d, #121212);
     font-family: 'MuseoModerno', cursive;
 }
 
-.record-img {
-    width: 200px;
-    height: 200px;
+.record-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     align-items: center;
 }
 
@@ -34,6 +44,7 @@ opacity: 60%;
     padding: 30px 50px;
     border-radius: 8px;
     font-size: 20px;
+ 
 }
 
 .quote-section:hover {

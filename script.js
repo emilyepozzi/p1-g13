@@ -75,5 +75,4 @@ fetch(apiUrlKanye)
             console.log(data);
             displayQuote(data, user);
         });
-};
-
+});
