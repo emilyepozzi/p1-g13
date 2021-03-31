@@ -6,8 +6,12 @@
 * CSS
 * HTML
 * JavaScript
-* Foundation CSS
-* Kanye Quote API
-* Napster API
+* Foundation
+* kanye.rest
+* Napster
 
 ## Contributors
+Emily Pozzi
+Brian Munoz
+Dana Shepherd
+Brandon Shoemaker
