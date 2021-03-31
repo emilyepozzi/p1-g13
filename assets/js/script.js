@@ -17,7 +17,7 @@ function getKanyeQuote(){
     .then(data => {
         console.log(data.quote);
         // give div elements to place quote in
-        $("#someId").text(data.quote);
+        $("#myModal").find("h2").text(data.quote);
     })
     .catch(error => {
         // Update html with div to print error
@@ -35,15 +35,20 @@ function getNapsterApi(){
 // place all jquery here that involves events
 $(document).ready(function () {
     // Incomplete quote container creator
-    $("#quote-section").on("click", "button", function(){
-        var modalEl = $("<div>");
-        modalEl.attr("id", "myModal");
-        modalEl.attr("style", "display: block");
-        
-        var h2El = $("<h2>");
-        var time
+    $("#quote-container").on("click", "button", function(){
+        console.log($("#modalPlaceholder").children().length);
+        if($("#modalPlaceholder").children().length === 1) getKanyeQuote();
+        else{
+            var modalEl = $("<div>");
+            modalEl.attr("id", "myModal");
+            modalEl.attr("style", "display: block");
+            modalEl.addClass("modal");
+            
+            var h2El = $("<h2>");
+            modalEl.append(h2El);
+            getKanyeQuote();
+            $("#modalPlaceholder").append(modalEl);
+        }
     });
 
 });
-
-getKanyeQuote();
