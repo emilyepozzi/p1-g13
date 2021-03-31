@@ -15,6 +15,7 @@ function getKanyeQuote(){
         }
     })
     .then(data => {
+        console.log(data.quote);
         // give div elements to place quote in
         $("#myModal").find("h2").text(data.quote);
     })
@@ -35,28 +36,19 @@ function getNapsterApi(){
 $(document).ready(function () {
     // Incomplete quote container creator
     $("#quote-container").on("click", "button", function(){
-
-        console.log($(".button-container").children().length);
+        console.log($("#modalPlaceholder").children().length);
         if($("#modalPlaceholder").children().length === 1) getKanyeQuote();
         else{
             var modalEl = $("<div>");
             modalEl.attr("id", "myModal");
+            modalEl.attr("style", "display: block");
             modalEl.addClass("modal");
             
             var h2El = $("<h2>");
             modalEl.append(h2El);
-            $("#modalPlaceholder").append(modalEl);
-
             getKanyeQuote();
+            $("#modalPlaceholder").append(modalEl);
         }
-        
-<<<<<<< Updated upstream
-        var h2El = $("<h2>");
-        var time
-=======
->>>>>>> Stashed changes
     });
 
 });
-
-getKanyeQuote();
