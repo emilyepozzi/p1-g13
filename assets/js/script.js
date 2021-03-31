@@ -15,6 +15,7 @@ function getKanyeQuote(){
         }
     })
     .then(data => {
+        console.log(data.quote);
         // give div elements to place quote in
         $("#someId").text(data.quote);
     })
@@ -26,14 +27,22 @@ function getKanyeQuote(){
 }
 
 function getNapsterApi(){
-    
+
 }
 
 
 
 // place all jquery here that involves events
 $(document).ready(function () {
-    // $(document).foundation();
+    // Incomplete quote container creator
+    $("#quote-section").on("click", "button", function(){
+        var modalEl = $("<div>");
+        modalEl.attr("id", "myModal");
+        modalEl.attr("style", "display: block");
+        
+        var h2El = $("<h2>");
+        
+    });
 
 });
 
