@@ -26,7 +26,16 @@ function getKanyeQuote(){
     });
 }
 
+
 function getNapsterApi(){
+    fetch("http://api.napster.com/v2.2/artists/art.5015309/tracks/top?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4")
+    .then(response => {
+        if(response.ok) return response.json();
+        else{
+            $("#someID").text("Error: Could not retrieve data");
+            errorReset();
+        }
+    });
 
 }
 
