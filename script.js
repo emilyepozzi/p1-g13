@@ -34,6 +34,8 @@ fetch(apiUrlRecord)
             console.log(data);
             displaySong(data, user);
         });
+    }
+})
 };
 
 
@@ -54,6 +56,8 @@ fetch(apiUrlKanye)
             console.log(data);
             displayQuote(data, user);
         });
+    }
+})
 };
 
 // event listener for button containers
