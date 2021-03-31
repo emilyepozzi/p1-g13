@@ -41,7 +41,7 @@ $(document).ready(function () {
         modalEl.attr("style", "display: block");
         
         var h2El = $("<h2>");
-        
+        var time
     });
 
 });
