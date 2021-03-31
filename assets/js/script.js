@@ -38,6 +38,17 @@ function getNapsterApi(){
     });
 
 }
+const tracksTemplateSource = document.getElementById('tracks-template').innerHTML;
+const tracksTemplate = Handlebars.compile(tracksTemplateSource);
+
+const $tracks = $('#tracks-container');
+
+const getTopTracks = $.get('http://api.napster.com/v2.2/artists/art.5015309/tracks/top?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4');
+
+getTopTracks
+  .then((response) => {
+    $tracks.html(tracksTemplate(response));
+  });
 
 
 
