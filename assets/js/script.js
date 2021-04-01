@@ -1,4 +1,5 @@
 var playButton = document.querySelector(".circle")
+
 function errorReset(){
     setTimeout(() => {
         $("#someId").text("");
