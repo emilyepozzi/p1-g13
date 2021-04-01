@@ -28,7 +28,7 @@ function getKanyeQuote(){
 }
 
 var getSong = function() {
-    fetch("http://api.napster.com/v2.2/artists/art.5015309/tracks/top?apikey=YTRjNjdmMDUtYjAwMS00NjYxLThkNjEtNGU1ZDU5OGRlZTA4")
+    fetch("https://api.napster.com/v2.2/artists/art.5015309/tracks/top?apikey=YTRjNjdmMDUtYjAwMS00NjYxLThkNjEtNGU1ZDU5OGRlZTA4")
     .then(response => {
      if(response.ok) return response.json();
     })
@@ -36,9 +36,9 @@ var getSong = function() {
     .then(data => {
         console.log(data)
     var randomNumber = Math.floor(Math.random() * 20)
-    console.log(randomNumber)
+    
     var song = (data.tracks[randomNumber].previewURL); 
-    console.log(song)
+    
     var divEl = document.getElementById("audio-player")
     divEl.innerHTML = ""
     var audioEl = document.createElement("audio")
