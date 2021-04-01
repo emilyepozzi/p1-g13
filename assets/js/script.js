@@ -36,9 +36,9 @@ var getSong = function() {
     .then(data => {
         console.log(data)
     var randomNumber = Math.floor(Math.random() * 20)
-    console.log(randomNumber)
+    
     var song = (data.tracks[randomNumber].previewURL); 
-    console.log(song)
+    
     var divEl = document.getElementById("audio-player")
     divEl.innerHTML = ""
     var audioEl = document.createElement("audio")
