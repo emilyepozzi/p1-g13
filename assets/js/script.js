@@ -1,3 +1,4 @@
+var playButton = document.querySelector(".circle")
 function errorReset(){
     setTimeout(() => {
         $("#someId").text("");
@@ -26,9 +27,30 @@ function getKanyeQuote(){
     });
 }
 
-function getNapsterApi(){
-
-}
+var getSong = function() {
+    fetch("http://api.napster.com/v2.2/artists/art.5015309/tracks/top?apikey=YTRjNjdmMDUtYjAwMS00NjYxLThkNjEtNGU1ZDU5OGRlZTA4")
+    .then(response => {
+     if(response.ok) return response.json();
+    })
+    
+    .then(data => {
+        console.log(data)
+    var randomNumber = Math.floor(Math.random() * 20)
+    console.log(randomNumber)
+    var song = (data.tracks[randomNumber].previewURL); 
+    console.log(song)
+    var divEl = document.getElementById("audio-player")
+    divEl.innerHTML = ""
+    var audioEl = document.createElement("audio")
+    audioEl.setAttribute("controls", "controls")
+    audioEl.setAttribute("autoplay", "autoplay")
+    audioEl.setAttribute("style", "display:none;")
+    var sourceEl = document.createElement("source")
+    sourceEl.setAttribute("src", song)
+    audioEl.appendChild(sourceEl)
+    divEl.appendChild(audioEl)
+    })
+};
 
 
 
@@ -52,3 +74,5 @@ $(document).ready(function () {
     });
 
 });
+
+playButton.addEventListener("click", getSong)
