@@ -51,8 +51,12 @@ var getSong = function() {
     audioEl.appendChild(sourceEl)
     divEl.appendChild(audioEl)
     })
+        .catch(error => {
+        // Update html with div to print error
+        $("#someId").text("Error: Could not connect to server.");
+        errorReset();
+    });
 };
-
 
 
 // place all jquery here that involves events
