@@ -1,8 +1,15 @@
 var playButton = document.querySelector(".circle")
 
+function printError(err){
+    var errorBlock = $("<div>");
+    errorBlock.attr("id", "error");
+    errorBlock.text(err);
+    errorReset();
+}
+
 function errorReset(){
     setTimeout(() => {
-        $("#someId").text("");
+        $("#error").remove();
     }, 5000);
 }
 
@@ -12,8 +19,7 @@ function getKanyeQuote(){
         if(response.ok) return response.json();
         else{
             // Update html with div to print error
-            $("#someId").text("Error: Could not retrieve data.");
-            errorReset();
+            printError("Error: Could not retrieve data.");
         }
     })
     .then(data => {
@@ -23,8 +29,7 @@ function getKanyeQuote(){
     })
     .catch(error => {
         // Update html with div to print error
-        $("#someId").text("Error: Could not connect to server.");
-        errorReset();
+        printError("Error: Could not connect to server.");
     });
 }
 
